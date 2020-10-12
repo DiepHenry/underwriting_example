@@ -1,0 +1,13 @@
+FROM python:3.8
+
+EXPOSE 8501
+
+WORKDIR /app
+
+COPY requirements.txt ./requirements.txt
+
+RUN pip install -r requirements.txt --proxy=avproxy.pacificlife.net:8080 --trusted-host pypi.org
+
+COPY src/ .
+
+CMD streamlit run main.py
