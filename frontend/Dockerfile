@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY requirements.txt ./requirements.txt
 
-RUN pip install -r requirements.txt --proxy=avproxy.pacificlife.net:8080 --trusted-host pypi.org
+RUN pip install -r requirements.txt
 
 COPY src/ .
 
